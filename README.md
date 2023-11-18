@@ -74,10 +74,10 @@ Note that Cypress Fairbanks Medical Center and Detar Hospital Navarro both have 
 
 The function should use the following template.
 rankhospital <- function(state, outcome, num = "best") {
- #Read outcome data
- #Check that state and outcome are valid
- #Return hospital name in that state with the given rank
- #30-day death rate
+ • Read outcome data
+ • Check that state and outcome are valid
+ • Return hospital name in that state with the given rank
+ • 30-day death rate
 }
 
 The function should check the validity of its arguments. If an invalid state value is passed to rankhospital, the function should throw an error via the stop function with the exact message “invalid state”. If an invalid outcome value is passed to rankhospital, the function should throw an error via the stop function with the exact message “invalid outcome”. Here is some sample output from the function.
@@ -98,11 +98,11 @@ Handling ties. The rankall function should handle ties in the 30-day mortality r
 The function should use the following template.
 
 rankall <- function(outcome, num = "best") {
- #Read outcome data
- #Check that state and outcome are valid
- #For each state, find the hospital of the given rank
- #Return a data frame with the hospital names and the
- #(abbreviated) state name
+ • Read outcome data
+ • Check that state and outcome are valid
+ • For each state, find the hospital of the given rank
+ • Return a data frame with the hospital names and the
+ •(abbreviated) state name
 }
 
 NOTE: For the purpose of this part of the assignment (and for efficiency), your function should NOT call the rankhospital function from the previous section. 
