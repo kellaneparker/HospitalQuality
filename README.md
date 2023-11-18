@@ -25,7 +25,7 @@ There are many columns in this dataset. You can see how many by typing ncol(outc
 To make a simple histogram of the 30-day death rates from heart attack (column 11 in the outcome dataset),
 run
 > outcome[, 11] <- as.numeric(outcome[, 11])
-> ## You may get a warning about NAs being introduced; that is okay
+You may get a warning about NAs being introduced; that is okay
 > hist(outcome[, 11])
 
 Because we originally read the data in as character (by specifying colClasses = "character" we need to coerce the column to be numeric. You may get a warning about NAs being introduced but that is okay.
@@ -33,10 +33,9 @@ Because we originally read the data in as character (by specifying colClasses = 
 ### Finding the best hospital in a state 
 
 Write a function called best that take two arguments: the 2-character abbreviated name of a state and an outcome name. The function reads the outcome-of-care-measures.csv file and returns a character vector with the name of the hospital that has the best (i.e. lowest) 30-day mortality for the specified outcome in that state. The hospital name is the name provided in the Hospital.Name variable. The outcomes can be one of “heart attack”, “heart failure”, or “pneumonia”. Hospitals that do not have data on a particular outcome should be excluded from the set of hospitals when deciding the rankings. Handling ties. If there is a tie for the best hospital for a given outcome, then the hospital names should be sorted in alphabetical order and the first hospital in that set should be chosen (i.e. if hospitals “b”, “c”, and “f” are tied for best, then hospital “b” should be returned). The function should use the following template. best <- function(state, outcome) {
-## Read outcome data
-## Check that state and outcome are valid
-## Return hospital name in that state with lowest 30-day death
-## rate
+  #Read outcome data
+  #Check that state and outcome are valid
+  #Return hospital name in that state with lowest 30-day death rate
 }
 The function should check the validity of its arguments. If an invalid state value is passed to best, the function should throw an error via the stop function with the exact message “invalid state”. If an invalid outcome value is passed to best, the function should throw an error via the stop function with the exact message “invalid outcome”.
 
@@ -75,10 +74,10 @@ Note that Cypress Fairbanks Medical Center and Detar Hospital Navarro both have 
 
 The function should use the following template.
 rankhospital <- function(state, outcome, num = "best") {
-## Read outcome data
-## Check that state and outcome are valid
-## Return hospital name in that state with the given rank
-## 30-day death rate
+ #Read outcome data
+ #Check that state and outcome are valid
+ #Return hospital name in that state with the given rank
+ #30-day death rate
 }
 
 The function should check the validity of its arguments. If an invalid state value is passed to rankhospital, the function should throw an error via the stop function with the exact message “invalid state”. If an invalid outcome value is passed to rankhospital, the function should throw an error via the stop function with the exact message “invalid outcome”. Here is some sample output from the function.
@@ -99,11 +98,11 @@ Handling ties. The rankall function should handle ties in the 30-day mortality r
 The function should use the following template.
 
 rankall <- function(outcome, num = "best") {
-## Read outcome data
-## Check that state and outcome are valid
-## For each state, find the hospital of the given rank
-## Return a data frame with the hospital names and the
-## (abbreviated) state name
+ #Read outcome data
+ #Check that state and outcome are valid
+ #For each state, find the hospital of the given rank
+ #Return a data frame with the hospital names and the
+ #(abbreviated) state name
 }
 
 NOTE: For the purpose of this part of the assignment (and for efficiency), your function should NOT call the rankhospital function from the previous section. 
